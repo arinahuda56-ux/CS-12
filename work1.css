@@ -1,0 +1,247 @@
+
+
+body {
+    margin: 0;
+}
+
+header {
+    width: 1100;
+    height:50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header>div:first-child {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    padding-left: 35px;
+    color: grey;
+    text-transform: lowercase;
+}
+
+header>div:last-child {
+    width: 225px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-transform: capitalize;
+    font-size: 20px;
+}
+
+.text-red {
+    color: red
+}
+
+
+
+.container {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 400px;
+    max-height: 700px;
+    height: 700px;
+
+    background-image: url('./containaer_1.jpg');
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+}
+
+#cont-about-us {
+    margin-left: 3.5%;
+    box-sizing: border-box;
+    padding: 5%;
+    width:40%;
+    aspect-ratio: 1/0.5;
+    background-color: rgb(246, 241, 241);
+}
+
+.text-about-us {
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+.text-about-us+div {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.text-about-us+div>span {
+    border-bottom: 1px solid black;
+    cursor: pointer;
+}
+.text-about-us+div>span:hover {
+   border-color: red; 
+}
+
+.button {
+    background-color: hsl(354, 65%, 80%);
+    color: #91444d;
+    padding: 5px 45px;
+    width: fit-content;
+    border-radius: 25px;
+    margin-top: 20px;
+}
+.button:hover {
+    background:#ea6b7adf;
+    color: #91444d;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.car { 
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 42%;
+    display: flex;
+
+}
+.foto {
+    width: 100%;
+    max-width: 480px;
+    height: auto;   
+}
+.lol {
+    display: flex;
+    gap: 40px;
+    padding: 36px;
+    max-width: 1100px;
+    margin: 40px auto;
+    
+}
+
+
+.gl {
+    font-size: 70px;
+    font-size: 44px;
+    margin: 0 0 18px 0;
+    
+}
+.text {
+    flex: 1;
+    padding-right: 8px;
+    margin-top: 140px;
+}
+.bot {
+    padding: 20px 42px;
+    background: hsl(354, 65%, 80%);
+    border-radius: 35px;
+    font-weight: 600;
+    border-color: hsl(354, 65%, 80%);
+    border: hsl(354, 65%, 80%);
+    width: 230px;
+    color: #c36772;
+    font-size: 20px;
+}
+
+.fifa {
+    margin: 0 0 26px 0;
+    max-width: 880px;
+    line-height: 1.7;
+    font-size: 20px;
+}
+
+
+.bot:hover {
+    background:#ea6b7adf;
+    color: #91444d;
+}
+
+.slovo {
+    text-decoration: underline;
+    text-decoration-color: black;
+}
+
+.slovo:hover {
+    text-decoration-color: red;
+}
+
+
+
+
+
+
+
+
+
+
+    .box {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      width: 90%;
+      max-width: 1000px;
+      margin: 50px auto;
+      display: flex;
+    }
+
+    .tex {
+      width: 50%;
+      padding-right: 20px;
+    }
+
+    .tex h2 {
+      font-size: 42px;
+      color: #222;
+      margin-top: 0;
+    }
+
+    .give {
+      width: 70px;
+      margin-bottom: 20px;
+      height: 4px;
+      background: hsl(354, 65%, 80%);
+    }
+        
+
+    .tex p {
+      font-size: 20px;
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .bts {
+      display: inline-block;
+      padding: 16px 35px;
+      background: hsl(354, 65%, 80%);
+      color: #c36772;
+      text-decoration: none;
+      border-radius: 40px;
+      width: 100px;
+      
+    }
+
+    .img {
+      width: 50%;
+    }
+
+    .img  {
+      max-width: 100%;
+    }
+
+    .bts:hover {
+    background:#ea6b7adf;
+    color: #91444d;
+
+    }
