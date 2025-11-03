@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #332f4d;
+  color: white;
+  line-height: 1.5;
+}
+
+/* 🔹 Навігація */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 20px 60px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  color: #ccc;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 35px;
+}
+
+.navbar nav a {
+  color: #555;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navbar nav a:hover {
+  color: #000;
+}
+
+.navbar nav a.active {
+  color: #732da6;
+}
+
+/* 🔹 Основна секція */
+.pricing-section {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.pricing-section h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.subtitle {
+  max-width: 650px;
+  margin: 0 auto 60px;
+  font-size: 1rem;
+  color: #dcdcdc;
+}
+
+/* 🔹 Контейнер карток через FLEX */
+.plans {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* 🔹 Картка */
+.plan {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  text-align: center;
+  padding: 35px 15px 30px;
+  width: 230px;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.plan:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* 🔹 Верхній білий блок */
+.plan-header {
+  background: white;
+  border-radius: 15px;
+  padding: 15px 10px;
+  margin: -70px auto 25px;
+  width: 90%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.plan-header h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.plan-header h2 {
+  font-size: 2.4rem;
+  margin: 8px 0;
+}
+
+.plan-header p {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* 🔹 Список функцій */
+.plan ul {
+  list-style: none;
+  margin-bottom: 25px;
+}
+
+.plan li {
+  margin: 7px 0;
+  font-size: 0.9rem;
+}
+
+/* 🔹 Кнопка */
+.plan button {
+  background: white;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+/* 🔹 Кольори блоків */
+.purple { background-color: #732da6; }
+.green { background-color: #2a9472; }
+.blue { background-color: #3797fc; }
+.orange { background-color: #f39640; }
+
+/* 🔹 Кольори тексту у білих блоках */
+.purple .plan-header h3,
+.purple .plan-header h2,
+.purple .plan-header p { color: #732da6; }
+
+.green .plan-header h3,
+.green .plan-header h2,
+.green .plan-header p { color: #2a9472; }
+
+.blue .plan-header h3,
+.blue .plan-header h2,
+.blue .plan-header p { color: #3797fc; }
+
+.orange .plan-header h3,
+.orange .plan-header h2,
+.orange .plan-header p { color: #f39640; }
+
+/* 🔹 Кольори кнопок */
+.purple button { color: #732da6; }
+.purple button:hover { background: #f0edff; }
+
+.green button { color: #2a9472; }
+.green button:hover { background: #e8f9f2; }
+
+.blue button { color: #3797fc; }
+.blue button:hover { background: #e8f3ff; }
+
+.orange button { color: #f39640; }
+.orange button:hover { background: #fff2e4; }
+
+
+
+
+
+
+
