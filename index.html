@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Завдання + Римські цифри</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #222;
+            color: #fff;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #4fd3ff;
+        }
+
+        input, button {
+            font-size: 18px;
+            padding: 10px;
+        }
+
+        button {
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        #result {
+            font-size: 24px;
+            margin-top: 20px;
+            color: #ffea4f;
+        }
+
+        pre {
+            background: #333;
+            padding: 15px;
+            border-radius: 5px;
+            color: #8aff8a;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Перетворення числа в римське число</h1>
+
+    <input id="numberInput" type="number" placeholder="Введіть число">
+    <button onclick="convert()">Конвертувати</button>
+
+    <h2 id="result"></h2>
+
+    <hr>
+
+    <h2>JS Функції з завдання</h2>
+    <p>Відкрий консоль (F12 → Console), щоб побачити результати.</p>
+
+    <pre>
+countVowels("Hello World") → 3
+secondLargest([10, 40, 30, 20, 50]) → 40
+isAnagram("listen", "silent") → true
+twoSum([2,7,11,15], 9) → [0,1]
+isPalindrome("racecar") → true
+    </pre>
+
+    <script src="script.js"></script>
+</body>
+</html>

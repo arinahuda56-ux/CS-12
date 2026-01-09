@@ -1,0 +1,97 @@
+<html>
+<head>
+    <link rel="stylesheet" href="pract6.css">
+</head>
+<body>
+
+<!-- Loader -->
+<div class="loader">
+    <div class="lds-dual-ring"></div>
+</div>
+
+<!-- Header -->
+<header>
+    <div class="wrapper">
+        <div class="cart">
+            <div>
+                <!-- ІКОНКА КОШИКА -->
+                <img src="corzuna.png" alt="Cart">
+                <div id="cart-counter" class="hide">0</div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Cart view -->
+<div class="cart-view-wrapper hide">
+    <div class="blur"></div>
+
+    <div id="cart-view">
+        <div class="title">
+            <div>Корзина</div>
+
+            <!-- ІКОНКА ХРЕСТИКА -->
+            <div id="cart-view-close">
+                <img src="xrestuk.png" alt="Close" style="width:24px;cursor:pointer;">
+            </div>
+        </div>
+
+        <div class="cart-view-list"></div>
+
+        <div class="total-price">
+            Всього: <span id="total-price-value">0</span>
+        </div>
+    </div>
+</div>
+
+<!-- Items and filters -->
+<div class="items-container">
+    <div class="wrapper">
+
+        <!-- Filters -->
+        <div class="filters">
+
+            <!-- ПОШУК -->
+            <div class="search">
+                <img src="poshuc.png" alt="Search">
+                <input type="text" id="search-input" placeholder="Пошук...">
+            </div>
+
+            <!-- КАТЕГОРІЇ -->
+            <div class="category">
+                <label>Категорія:</label>
+                <select>
+                    <option value="">Всі</option>
+                </select>
+            </div>
+
+            <!-- ЦІНА -->
+            <div class="price">
+                <label>Ціна:</label>
+                <input type="number" id="price-min" placeholder="Від">
+                <input type="number" id="price-max" placeholder="До">
+            </div>
+
+            <!-- РЕЙТИНГ -->
+            <div class="rating">
+                <label>Рейтинг:</label>
+                <input type="number" min="0" max="5" id="rating" placeholder="Від">
+            </div>
+
+            <!-- ДОДАТКОВІ ФУНКЦІЇ -->
+            <div class="extra-functions">
+                <label>Додатково:</label>
+                <div class="extra-functions-container"></div>
+            </div>
+
+        </div>
+
+        <!-- ITEMS -->
+        <div class="items"></div>
+
+    </div>
+</div>
+
+<script src="6script.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h2 {
+            color: #333;
+        }
+        input, button {
+            padding: 5px;
+            margin: 5px 0;
+        }
+        .result {
+            margin-top: 5px;
+            font-weight: bold;
+        }
+        .section {
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    
+
+    <div class="section">
+        <h2>6. Римські числа</h2>
+        <input type="number" id="romanInput" placeholder="Введіть число">
+        <button onclick="showRoman()">Перетворити</button>
+        <div class="result" id="romanResult"></div>
+    </div>
+
+    <script>// 6. Римські числа
+function toRoman(num) {
+    const romanMap = [
+        { value: 1000, symbol: 'M' },
+        { value: 900, symbol: 'CM' },
+        { value: 500, symbol: 'D' },
+        { value: 400, symbol: 'CD' },
+        { value: 100, symbol: 'C' },
+        { value: 90, symbol: 'XC' },
+        { value: 50, symbol: 'L' },
+        { value: 40, symbol: 'XL' },
+        { value: 10, symbol: 'X' },
+        { value: 9, symbol: 'IX' },
+        { value: 5, symbol: 'V' },
+        { value: 4, symbol: 'IV' },
+        { value: 1, symbol: 'I' }
+    ];
+
+    let result = '';
+    for (let {value, symbol} of romanMap) {
+        while (num >= value) {
+            result += symbol;
+            num -= value;
+        }
+    }
+    return result;
+}
+
+function showRoman() {
+    const num = Number(document.getElementById('romanInput').value);
+    if (num <= 0) {
+        document.getElementById('romanResult').innerText = 'Введіть число більше 0';
+    } else {
+        document.getElementById('romanResult').innerText = toRoman(num);
+    }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+.container {
+    padding: 20px;
+}
+
+.author {
+    border: 1px solid #aaa;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.info {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 50%;
+}
+
+.posts {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+}
+
+.post {
+    border: 1px solid #ccc;
+    padding: 10px;
+    min-width: 160px;
+}
