@@ -1,4 +1,4 @@
-// Масив товарів (копіюй сюди всі товари від викладача)
+
 const data = 
   
 [
@@ -1083,19 +1083,13 @@ const data =
   }
 ];
 
-
-// ================== DATA ==================
-// Припустимо, у тебе є масив data
-// const data = [...]; // твої товари
-
-// ================== CART + LOCALSTORAGE ==================
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 const saveCart = () => {
   localStorage.setItem("cart", JSON.stringify(cart));
 };
 
-// ================== ITEMS ==================
+
 const itemsContainer = document.querySelector(".items");
 
 const createItem = (item) => {
@@ -1143,7 +1137,6 @@ const renderItems = (list) => {
   list.forEach(item => itemsContainer.appendChild(createItem(item)));
 };
 
-// ================== CART VIEW ==================
 const cartList = document.querySelector(".cart-view-list");
 const totalPriceEl = document.querySelector("#total-price-value");
 
@@ -1216,7 +1209,7 @@ const renderCart = () => {
 };
 
 
-// ================== CART COUNTER ==================
+
 const updateCartCounter = () => {
   const counter = document.querySelector("#cart-counter");
   const sum = cart.reduce((a, b) => a + b.count, 0);
@@ -1224,7 +1217,6 @@ const updateCartCounter = () => {
   counter.classList.toggle("hide", sum === 0);
 };
 
-// ================== CART OPEN/CLOSE ==================
 const cartWrapper = document.querySelector(".cart");
 const cartViewWrapper = document.querySelector(".cart-view-wrapper");
 const cartClose = document.querySelector("#cart-view-close");
@@ -1238,14 +1230,14 @@ cartClose.addEventListener("click", () => {
   cartViewWrapper.classList.add("hide");
 });
 
-// ================== FILTERS ==================
+
 const searchInput = document.querySelector("#search-input");
 const priceMin = document.querySelector("#price-min");
 const priceMax = document.querySelector("#price-max");
 const ratingInput = document.querySelector("#rating");
 const categorySelect = document.querySelector(".category select");
 
-// Додаємо опції категорій
+
 [...new Set(data.map(i => i.category))].forEach(cat => {
   const opt = document.createElement("option");
   opt.value = cat;
@@ -1281,13 +1273,12 @@ const applyFilters = () => {
 );
 categorySelect.addEventListener("change", applyFilters);
 
-// ================== INIT ==================
 document.addEventListener("DOMContentLoaded", () => {
   renderItems(data);
   renderCart();
   updateCartCounter();
 
-  // Приховуємо loader
+  
   const loader = document.querySelector(".loader");
   if (loader) loader.classList.add("hide");
 });

@@ -1,4 +1,4 @@
-// 1. Підрахунок голосних
+
 function countVowels(str) {
     const vowels = 'аеіоуюяиAEIOUYaeiouy';
     let count = 0;
@@ -13,9 +13,9 @@ function showVowels() {
     document.getElementById('vowelResult').innerText = `Голосні: ${countVowels(input)}`;
 }
 
-// 2. Друге найбільше число
+
 function secondLargest(arr) {
-    const uniqueArr = [...new Set(arr)]; // прибираємо дублікати
+    const uniqueArr = [...new Set(arr)]; 
     uniqueArr.sort((a,b) => b - a);
     return uniqueArr[1] !== undefined ? uniqueArr[1] : null;
 }
@@ -26,7 +26,6 @@ function showSecondLargest() {
     document.getElementById('secondLargestResult').innerText = `Друге найбільше число: ${secondLargest(arr)}`;
 }
 
-// 3. Перевірка анаграм
 function isAnagram(str1, str2) {
     const normalize = str => str.replace(/\s+/g, '').toLowerCase().split('').sort().join('');
     return normalize(str1) === normalize(str2);
@@ -38,7 +37,6 @@ function showAnagram() {
     document.getElementById('anagramResult').innerText = isAnagram(str1, str2) ? 'Так, анаграми' : 'Ні, не анаграми';
 }
 
-// 4. Two Sum
 function twoSum(arr, target) {
     const map = {};
     for (let i = 0; i < arr.length; i++) {
@@ -58,7 +56,6 @@ function showTwoSum() {
     document.getElementById('twoSumResult').innerText = result ? `Індекси: [${result}]` : 'Немає пари';
 }
 
-// 5. Перевірка на паліндром
 function isPalindrome(str) {
     const clean = str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
     return clean === clean.split('').reverse().join('');

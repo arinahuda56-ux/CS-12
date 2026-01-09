@@ -12,7 +12,7 @@ body {
     justify-content: center;
 }
 
-/* === GRID STRUCTURE === */
+
 .grid {
     width: 1500px;
     display: grid;
@@ -25,7 +25,7 @@ body {
         "b1   b2   b3";
 }
 
-/* === HERO (LEFT LARGE BLOCK) === */
+
 .hero {
     grid-area: hero;
     background: white;
@@ -33,17 +33,16 @@ body {
     padding: 40px;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end; /* опустили текст */
+    align-items: flex-end; 
     box-shadow: 0 10px 28px rgba(0,0,0,0.06);
     padding-top: 80px;
 
-    overflow: hidden;   /* <<< додати */
+    overflow: hidden;   
     position: relative;
 
     
 }
 
-/* Text inside hero */
 .hero-text {
     width: 380px;
     flex: 1;
@@ -60,17 +59,16 @@ body {
     color: #7f858f;
 }
 
-/* PHONE */
 .phone-area {
 
     position: relative;
     margin-bottom: -260px;
     transform: translateX(-50px);
 }
-}
+
 
 .phone {
-   width: 480px;
+   width: 390px;
     transform: scale(1.30);
     transform-origin: center top;
     
@@ -84,12 +82,12 @@ body {
 }
 
 
-/* CHAT BUBBLES */
+
 .bubble {
     position: absolute;
-    max-width: 300px; /* було 260px */
-    padding: 16px 22px; /* більше відступи */
-    font-size: 16px;  /* трошки більший текст */
+    max-width: 300px; 
+    padding: 16px 22px; 
+    font-size: 16px;  
     font-weight: 600;
     border-radius: 30px;
     line-height: 1.35;
@@ -117,7 +115,7 @@ body {
 
 
 
-/* === CLOUD (TOP RIGHT) === */
+
 .cloud {
     grid-area: cloud;
     border-radius: 22px;
@@ -153,7 +151,7 @@ body {
     transform: translateY(90px)
 }
 
-/* === BOTTOM 3 BLOCKS === */
+
 .card {
     background: white;
     border-radius: 22px;
@@ -162,14 +160,14 @@ body {
     box-shadow: 0 10px 28px rgba(0,0,0,0.06);
 }
 
-/* 1 — чорний */
+
 .card.black {
     grid-area: b1;
     background: black;
     color: white;
     display: flex;
     justify-content: center; 
-    align-items: center; /* центрування */
+    align-items: center; 
     text-align: center;
 }
 
@@ -185,7 +183,6 @@ body {
     font-weight: 500;
 }
 
-/* 2 — Increased Sales */
 .card.sales {
     grid-area: b2;
 }
@@ -203,7 +200,6 @@ body {
     margin-top: 140px;
 }
 
-/* 3 — Stronger Presence */
 .card.pills {
     grid-area: b3;
     height: 480px;
@@ -233,7 +229,6 @@ body {
     margin-top: 20px;
 }
 
-/* tilt to match screenshot */
 .tiltA { transform: rotate(-10deg); }
 .tiltB { transform: rotate(8deg); }
 .tiltC { transform: rotate(-4deg); }
@@ -250,7 +245,7 @@ body {
     margin-top: 20px;
     font-weight: 900;
 }
-/* vibration animation */
+
 @keyframes vib {
     0% { transform: translate(0) rotate(var(--rot)); }
     50% { transform: translate(3px, -3px) rotate(var(--rot)); }
@@ -261,7 +256,6 @@ body {
     animation: vib 2s infinite ease-in-out;
 }
 
-/* pill positions */
 .pill:nth-child(1){ top: 5%; left: 5%; --rot:-10deg; }
 .pill:nth-child(2){ top: 5%; right: 5%; --rot:8deg; }
 .pill:nth-child(3){ top: 40%; left: 20%; --rot:-4deg; }
