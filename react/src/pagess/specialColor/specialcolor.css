@@ -1,0 +1,4 @@
+.special-top{display:flex; gap:20px; align-items:flex-start; padding:12px; background:#fff; border-radius:10px}
+.preview{width:220px; height:120px; border-radius:10px; box-shadow:0 6px 22px rgba(0,0,0,0.06)}
+.conversion table{border-collapse:collapse}
+.conversion td{padding:8px 12px; border-bottom:1px solid rgba(0,0,0,0.05)}

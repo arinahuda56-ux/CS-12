@@ -1,0 +1,14 @@
+body {
+  background-color: #3b4252 !important; 
+  margin: 0;
+  color: white;
+  
+}
+
+::-webkit-scrollbar {
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 10px;
+}

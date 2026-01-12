@@ -1,0 +1,24 @@
+.container { 
+    background-color: transparent !important; 
+    border: 1px solid white !important; 
+    border-radius: 12px; 
+    padding: 15px; 
+    width: 160px; 
+    min-width: 160px; 
+    height: 130px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    flex-shrink: 0;  
+} 
+ 
+.open_btn { 
+    background-color: white; 
+    color: #3b4252; 
+    border: none; 
+    border-radius: 20px; 
+    padding: 5px 0; 
+    width: 100%; 
+    font-weight: bold; 
+    cursor: pointer; 
+}

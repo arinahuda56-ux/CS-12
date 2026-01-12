@@ -1,0 +1,51 @@
+.authors_page { 
+    background-color: #3b4252;  
+    min-height: 100vh; 
+    padding: 30px; 
+    color: white; 
+} 
+ 
+.author_row { 
+    display: flex !important; 
+    flex-direction: row !important;  
+    align-items: center; 
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    border-radius: 15px; 
+    padding: 20px; 
+    margin-bottom: 25px; 
+    background: rgba(255, 255, 255, 0.03); 
+} 
+ 
+.author_info_block { 
+    width: 220px; 
+    min-width: 220px; 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+    flex-shrink: 0;  
+} 
+ 
+.avatar { 
+    width: 60px; 
+    height: 60px; 
+    background: white; 
+    border-radius: 50%; 
+} 
+ 
+.posts_scroll_container { 
+    display: flex !important; 
+    flex-direction: row !important;  
+    overflow-x: auto !important;     
+    gap: 15px; 
+    padding: 10px; 
+    flex-grow: 1; 
+    min-width: 0;  
+} 
+ 
+.posts_scroll_container::-webkit-scrollbar { 
+    height: 8px; 
+} 
+.posts_scroll_container::-webkit-scrollbar-thumb { 
+    background: white; 
+    border-radius: 10px; 
+}

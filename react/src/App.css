@@ -1,0 +1,67 @@
+:root{
+  --bg: #f7f8fa;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --accent: #5b6bff;
+  --container: 1100px;
+}
+
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:#111827;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Центруємо основний контент */
+.app-root main {
+  display:flex;
+  justify-content:center;
+  padding:28px 16px 80px;
+}
+
+/* Контейнер сторінок */
+.page {
+  width:100%;
+  max-width:var(--container);
+}
+
+/* Загальні блоки сторінок */
+h1,h2,h3,h4{margin:0 0 12px 0}
+p{margin:0 0 12px 0; color:var(--muted)}
+
+/* Кнопки */
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border: 0;
+  padding: 10px 14px;
+  border-radius: 8px;
+}
+.btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.06);
+  padding: 10px 14px;
+  border-radius: 8px;
+}
+
+/* Footer (простий) */
+.site-footer {
+  text-align:center;
+  color:var(--muted);
+  padding:28px 12px;
+  font-size:13px;
+}
+
+/* Універсальні допоміжні класи */
+.muted { color: var(--muted); }
+.center { text-align:center; }
+
+/* Якщо потрібно, можна додавати стилі для додаткових компонентів тут */

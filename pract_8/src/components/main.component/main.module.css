@@ -1,0 +1,20 @@
+.main_container { 
+    background-color: #121212;  
+    min-height: 100vh; 
+    padding: 40px 20px; 
+} 
+ 
+.header_title { 
+    color: #ffffff; 
+    text-align: center; 
+    font-size: 2.5rem; 
+    margin-bottom: 40px; 
+} 
+ 
+.posts { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+    gap: 25px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}

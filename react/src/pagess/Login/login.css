@@ -1,0 +1,8 @@
+.auth-page{padding:24px;background:#fff; border-radius:10px}
+.form{display:flex; flex-direction:column; gap:10px; max-width:420px}
+.form input{padding:10px;border-radius:8px;border:1px solid rgba(0,0,0,0.08)}
+.pw-row{display:flex; gap:8px; align-items:center}
+.pw-toggle{padding:8px 10px; border-radius:8px; background:transparent; border:1px solid rgba(0,0,0,0.06); cursor:pointer}
+.auth-actions{display:flex; gap:10px; margin-top:12px}
+.btn-primary{background:#5b6bff;color:#fff;padding:10px 12px;border-radius:8px;border:0}
+.btn-ghost{background:transparent;border:1px solid rgba(0,0,0,0.06);padding:10px 12px;border-radius:8px}
