@@ -1,0 +1,70 @@
+/* Базовий CSS — адаптуйте під свій дизайн */
+.weird-root {
+  display: flex;
+  min-height: 100vh;
+  font-family: sans-serif;
+}
+
+.weird-leftside {
+  flex: 1;
+  padding: 40px;
+  max-width: 520px;
+}
+
+.weird-header h1 {
+  margin: 0 0 8px 0;
+  font-size: 32px;
+}
+
+.weird-subtitle {
+  margin: 0 0 24px 0;
+  color: #666;
+}
+
+.weird-input {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.weird-pass-wrapper {
+  position: relative;
+}
+
+.weird-input--with-toggle {
+  padding-right: 44px;
+}
+
+.weird-toggle {
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  background: transparent;
+  border: 0;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.weird-button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.weird-signin {
+  margin-top: 12px;
+}
+
+.weird-rightside {
+  flex: 1;
+  background: linear-gradient(180deg,#f6f7fb,#e9eefb);
+}
