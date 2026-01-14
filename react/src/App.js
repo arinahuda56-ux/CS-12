@@ -6,9 +6,7 @@ import { Routes, Route, Link } from "react-router-dom"
 import { getPalette, getRandomPalette } from './shared/colorPaletteGenerator'
 import { HoverColorLetters } from './components/hoverColorLetters/hoverColorLetters'
 import { Header } from './components/header/header.component'
-// import { Login } from './pages/Login/login'
-// App.js
-import Login from './pages/Login/login.js';
+import  Login  from './pages/Login/login'
 import { Generator } from './pages/Generator/generator' // сторінка генератора
 
 function App() {
@@ -72,9 +70,10 @@ function App() {
                     {/* <Link to="/login" className="btn btnPrimary">
                       Sign Up
                     </Link> */}
-                    <Link to="/generator" aria-label="Open generator">
+                <Link to="/generator"  aria-label="Open generator">
                     <button className="btn btnOutline ol">
                       Start the Generator
+                
                     </button></Link>
 
                     <button className="btn btnOutline oll">
