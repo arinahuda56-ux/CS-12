@@ -1,225 +1,405 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
-<meta charset="UTF-8">
-<title>Trusted Section</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Midnight Violet</title>
+  <style>
+    * { box-sizing: border-box; }
+    
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #111;
+      background: #fff;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 24px 40px;
+    }
+    .header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+    }
+    .breadcrumb {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 48px;
+      margin: 0 0 12px;
+    }
+    .subtitle {
+      max-width: 520px;
+      font-size: 18px;
+      line-height: 1.5;
+      color: #555;
+    }
+    .envato-box {
+      border: 1px solid #eee;
+      border-radius: 10px;
+      padding: 16px 18px;
+      max-width: 280px;
+      font-size: 14px;
+      color: #555;
+    }
+    .envato-box strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #111;
+    }
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Inter, Arial, sans-serif;
-}
+    /* PREVIEW */
+    .color-preview {
+      position: relative;
+      background: #301934;
+      border-radius: 12px;
+      height: 240px;
+      width: 100%;
+      margin: 40px 0 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .color-preview span {
+      font-size: 42px;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 2px;
+    }
 
-body {
-  background: #fff;
-  color: #111;
-}
-
-/* ===================== */
-.trusted {
-  padding: 90px 80px;
-}
-
-/* TITLE */
-.trusted-title {
-  text-align: center;
+    /* ACTION BUTTONS */
+    .preview-actions {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      display: flex;
+      gap: 10px;
+    }
+    .preview-actions button {
+      height: 34px;
+      min-width: 34px;
+      padding: 0 10px;
+      border-radius: 8px;
+      border: none;
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      cursor: pointer;
+      backdrop-filter: blur(6px);
+    }
+    .preview-actions button:hover {
+      background: rgba(255,255,255,0.25);
+    }
+    .preview-actions svg {
+      width: 16px;
+      height: 16px;
+      stroke: #fff;
+    }
+    .save-btn {
   font-size: 13px;
-  letter-spacing: 1.6px;
-  color: #888;
-  margin-bottom: 60px;
-  font-weight: 600;
 }
 
-/* ===================== */
-/* LOGOS */
-/* ===================== */
-.logos {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr); /* 🔥 рівно на всю ширину */
-  align-items: center;
-  width: 100%;
-  margin-bottom: 100px; /* 🔥 опускає весь контент нижче */
+.save-btn span {
+  font-size: 11px;
 }
 
-.logos img {
-  height: 26px;
-  justify-self: center;
-  opacity: 0.85;
-  filter: grayscale(100%);
-}
 
-/* ===================== */
-/* CONTENT */
-/* ===================== */
-.content {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 90px;
-}
+    /* CONTENT */
+    h2 {
+      font-size: 28px;
+      margin-bottom: 24px;
+    }
+    .conversion {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      max-width: 720px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+    td {
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+    td:first-child { color: #777; }
 
-/* TEXT LEFT */
-.text {
-  max-width: 720px;
-  font-size: 22px;
-  line-height: 1.75;
-  color: #222;
-}
+    footer {
+      margin-top: 80px;
+      padding-top: 60px;
+      border-top: 1px solid #eee;
+    }
+    .footer-columns {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      font-size: 14px;
+      color: #555;
+    }
+    footer h4 {
+      font-size: 14px;
+      margin-bottom: 12px;
+      color: #111;
+    }
+    footer ul { list-style: none; padding: 0; margin: 0; }
+    footer li { margin-bottom: 8px; }
 
-/* ===================== */
-/* COLOR CARD */
-/* ===================== */
-.color-card {
-  background: #f6f6f6;
-  border-radius: 20px;
-  padding: 24px 32px;
-  width: 600px;
-}
-
-/* TITLE */
-.color-card small {
-  font-size: 14px;
-  letter-spacing: 1.2px;
-  color: #111;
-  font-weight: 700;
-  display: block;
-  margin-bottom: 20px;
-}
-
-/* BOX */
-.color-box {
-  display: flex;
-  gap: 28px;
-}
-
-/* LEFT */
-.color-left {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.color-sample {
-  width: 72px;
-  height: 72px;
-  border-radius: 10px;
+    .footer-bottom {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: #777;
+    }
+    .socials {
+      display: flex;
+      gap: 14px;
+    }
+    .socials div {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #ddd;
+    }
+    /* FULLSCREEN PREVIEW */
+.fullscreen-preview {
+  position: fixed;
+  inset: 0;
   background: #301934;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
 }
 
-.color-hex {
-  margin-top: 10px;
-  font-size: 13px;
-  font-weight: 600;
-  color: #333;
+.fullscreen-preview.active {
+  opacity: 1;
+  pointer-events: auto;
 }
 
-/* RIGHT */
-.color-info h3 {
-  font-size: 26px;
-  font-weight: 800;
-  margin-bottom: 6px;
+.fullscreen-preview span {
+  font-size: 64px;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 4px;
+}/* CLOSE ARROW */
+.fullscreen-close {
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.15);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.color-info p {
-  font-size: 15px;
-  color: #555;
-  line-height: 1.3;
+.fullscreen-close:hover {
+  background: rgba(255,255,255,0.25);
 }
 
-/* FOOTER */
-.footer-title {
-  text-align: center;
-  margin-top: 120px;
-  font-size: 14px;
-  letter-spacing: 1px;
-  color: #999;
-  font-weight: 600;
+.fullscreen-close svg {
+  width: 22px;
+  height: 22px;
+  stroke: #fff;
 }
 
-/* ===================== */
-/* RESPONSIVE */
-/* ===================== */
-@media (max-width: 1100px) {
-  .content {
-    flex-direction: column;
-  }
 
-  .color-card {
-    width: 100%;
-  }
-
-  .logos {
-    grid-template-columns: repeat(5, 1fr);
-    row-gap: 40px;
-  }
-}
-</style>
+    @media (max-width: 900px) {
+      .header-row { flex-direction: column; }
+      .conversion { grid-template-columns: 1fr; }
+      .footer-columns { grid-template-columns: 1fr 1fr; }
+      .footer-bottom { flex-direction: column; gap: 16px; }
+    }
+  </style>
 </head>
-
 <body>
+    <div class="fullscreen-preview" id="fullscreenPreview">
+  <button class="fullscreen-close" aria-label="Close">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+      <path d="M15 18l-6-6 6-6"/>
+    </svg>
+  </button>
+  <span>301934</span>
+</div>
 
-<section class="trusted">
+<div class="container">
 
-  <div class="trusted-title">
-    TRUSTED BY 8+ MILLION CREATIVE MINDS AND TOP COMPANIES
+  <div class="header-row">
+    <div>
+      <div class="breadcrumb">Colors &gt; Midnight Violet</div>
+      <h1>Midnight Violet</h1>
+      <div class="subtitle">
+        Intense violet-black depths fill any space with intrigue and boldness, channeling mystery and hidden elegance.
+      </div>
+    </div>
+    <div class="envato-box">
+      <strong>Envato</strong>
+      Speed up your workflow with unlimited Graphic Assets.
+    </div>
   </div>
 
-  <!-- LOGOS -->
-  <div class="logos">
-    <img src="https://res.cloudinary.com/coolors/image/upload/v1757421784/media/63efa1d3d16c97552586e2ac6a280a6b2389b88f-100x48.svg">
-    <img src="https://res.cloudinary.com/coolors/image/upload/v1757422149/media/warnerbros.svg">
-    <img src="https://res.cloudinary.com/coolors/image/upload/v1757421758/media/a9bfb23cca986ee16b0547274bcd7461ffd373aa-67x18.svg">
-    <img src="https://res.cloudinary.com/coolors/image/upload/v1757422338/media/5e789db505180ee41e0612d7d53e2ec48c9c5837-153x20.svg">
-    <img src="https://res.cloudinary.com/coolors/image/upload/v1757421784/media/63efa1d3d16c97552586e2ac6a280a6b2389b88f-100x48.svg">
-    <img src="https://res.cloudinary.com/coolors/image/upload/v1757421770/media/cc8b81fd47ded1e82d83258e2f674e0951e20fcc-86x18.svg">
-    <img src="https://res.cloudinary.com/coolors/image/upload/v1757422329/media/c641bb5bbe69c6b42344fd2333924a206ef43736-92x18.svg">
-    <img src="https://res.cloudinary.com/coolors/image/upload/v1757421975/media/1622439415c22e4475400432eae4619d1592a8bc-71x22.svg">
-    <img src="https://res.cloudinary.com/coolors/image/upload/v1757421653/media/Disney_wordmark.svg">
-    <img src="https://res.cloudinary.com/coolors/image/upload/v1757421980/media/fb78b2f382a2d2d93b155601fbc9032379d2515d-79x20.svg">
-  </div>
+  <div class="color-preview">
+    <div class="preview-actions">
 
-  <!-- CONTENT -->
-  <div class="content">
+      <!-- Edit -->
+      <button aria-label="Edit">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2">
+          <path d="M12 20h9"/>
+          <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/>
+        </svg>
+      </button>
 
-    <div class="text">
-      Coolors is the lightning-fast, ultra-intuitive color palette generator
-      for designers, creators, and anyone seeking visual harmony.
-      Instantly generate beautiful palettes by hitting the spacebar,
-      or explore millions of popular ones. Extract colors from images,
-      check accessibility, and preview them on real designs.
-      Organize your palettes into projects and export them in multiple
-      formats—effortlessly across web, apps, and plugins. Now with AI!
+      <!-- Open -->
+      <button aria-label="Open">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2">
+          <path d="M14 3h7v7"/>
+          <path d="M10 14 21 3"/>
+          <path d="M21 14v7h-7"/>
+          <path d="M3 10V3h7"/>
+        </svg>
+      </button>
+
+      <!-- Save -->
+      <button class="save-btn" aria-label="Save">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2">
+          <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/>
+        </svg>
+        <span>Save</span>
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2">
+          <path d="m6 9 6 6 6-6"/>
+        </svg>
+      </button>
+
     </div>
 
-    <div class="color-card">
-      <small>COLOR OF THE DAY</small>
+    <span>301934</span>
+  </div>
 
-      <div class="color-box">
-        <div class="color-left">
-          <div class="color-sample"></div>
-          <div class="color-hex">#301934</div>
-        </div>
-
-        <div class="color-info">
-          <h3>Midnight Violet</h3>
-          <p>
-            Intense violet-black depths fill any space with intrigue and
-            boldness, channeling mystery and hidden elegance.
-          </p>
-        </div>
+  <h2>Conversion</h2>
+  <div class="conversion">
+    <table>
+      <tr><td>HEX</td><td>301934</td></tr>
+      <tr><td>RGB</td><td>48, 25, 52</td></tr>
+      <tr><td>CMYK</td><td>8, 52, 0, 80</td></tr>
+      <tr><td>HSB</td><td>291, 52, 20</td></tr>
+      <tr><td>HSL</td><td>291, 35, 15</td></tr>
+    </table>
+    <table>
+      <tr><td>LAB</td><td>13, 17, -13</td></tr>
+      <tr><td>XYZ</td><td>2, 2, 3</td></tr>
+      <tr><td>LCH</td><td>13, 21, 322</td></tr>
+      <tr><td>LUV</td><td>13, 8, -13</td></tr>
+      <tr><td>HWB</td><td>291, 10, 80</td></tr>
+    </table>
+  </div><footer>
+    <div class="footer-columns">
+      <div>
+        <h4>TOOLS</h4>
+        <ul>
+          <li>Generate your palettes</li>
+          <li>Explore popular palettes</li>
+          <li>Extract palette from image</li>
+          <li>Contrast checker</li>
+          <li>Preview palettes on designs</li>
+          <li>Color picker</li>
+          <li>Tailwind Colors</li>
+          <li>Color Bot</li>
+        </ul>
+      </div>
+      <div>
+        <h4>DISCOVER</h4>
+        <ul>
+          <li>List of colors</li>
+          <li>Browse gradients</li>
+          <li>Create a gradient</li>
+          <li>Make a gradient palette</li>
+          <li>Image converter</li>
+          <li>Recolor your own design</li>
+          <li>Browse free fonts</li>
+          <li>Font Generator</li>
+        </ul>
+      </div>
+      <div>
+        <h4>APPS</h4>
+        <ul>
+          <li>iOS App</li>
+          <li>Figma Plugin</li>
+          <li>Adobe Extension</li>
+          <li>Chrome Extension</li>
+        </ul>
+      </div>
+      <div>
+        <h4>COMPANY</h4>
+        <ul>
+          <li>Pricing</li>
+          <li>License</li>
+          <li>Terms of service</li>
+          <li>Privacy policy</li>
+          <li>Cookie policy</li>
+          <li>Manage cookies</li>
+          <li>Help center</li>
+          <li>Advertise</li>
+          <li>Affiliate</li>
+          <li>Contact</li>
+          <li>Feature Requests</li>
+        </ul>
       </div>
     </div>
 
-  </div>
+    <div class="footer-bottom">
+      <div>© Coolors by Fabrizio Bianchi. Let’s make something cool!</div>
+      <div class="socials">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </footer>
 
-  <div class="footer-title">
-    OUR TOOLS, LOVED BY MILLIONS
-  </div>
+</div>
+<script>
+  const openBtn = document.querySelector(
+    '.preview-actions button:nth-child(2)'
+  );
+  const fullscreen = document.getElementById('fullscreenPreview');
+  const closeBtn = fullscreen.querySelector('.fullscreen-close');
 
-</section>
+  openBtn.addEventListener('click', () => {
+    fullscreen.classList.add('active');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    fullscreen.classList.remove('active');
+  });
+
+  // ESC для виходу
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      fullscreen.classList.remove('active');
+    }
+  });
+</script>
 
 </body>
 </html>

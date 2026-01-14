@@ -53,9 +53,10 @@ export const Header = () => {
         </div> 
  
         <a href="#" className={classes.pro}>Go Pro</a> 
+        <a href="#" className={classes.signin}>Sign in</a>
  
         {/* внутрішній перехід через Link (без перезавантаження) */} 
-        <Link to="/login" className={classes.signin}>Sign in</Link> 
+        {/* <Link to="/login" className={classes.signin}>Sign up</Link>  */}
         <Link to="/login" className={classes.signupBtn}>Sign up</Link> 
       </nav> 
     </header> 

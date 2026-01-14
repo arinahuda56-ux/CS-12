@@ -1,86 +1,157 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import "./specialcolor.css";
-
-function hexToRgb(hex) {
-  const h = hex.replace("#", "");
-  const n = parseInt(h, 16);
-  return { r: (n >> 16) & 255, g: (n >> 8) & 255, b: n & 255 };
-}
-function rgbToCmyk({ r, g, b }) {
-  const rn = r / 255, gn = g / 255, bn = b / 255;
-  const k = 1 - Math.max(rn, gn, bn);
-  if (k === 1) return { c: 0, m: 0, y: 0, k: 1 };
-  const c = (1 - rn - k) / (1 - k);
-  const m = (1 - gn - k) / (1 - k);
-  const y = (1 - bn - k) / (1 - k);
-  return { c, m, y, k };
-}
-function rgbToHsl({ r, g, b }) {
-  const rn = r / 255, gn = g / 255, bn = b / 255;
-  const max = Math.max(rn, gn, bn), min = Math.min(rn, gn, bn);
-  let h = 0, s = 0;
-  const l = (max + min) / 2;
-  if (max !== min) {
-    const d = max - min;
-    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-    switch (max) {
-      case rn: h = (gn - bn) / d + (gn < bn ? 6 : 0); break;
-      case gn: h = (bn - rn) / d + 2; break;
-      default: h = (rn - gn) / d + 4;
-    }
-    h /= 6;
-  }
-  return { h: Math.round(h * 360), s: Math.round(s * 100), l: Math.round(l * 100) };
-}
-function rgbToHsv({ r, g, b }) {
-  const rn = r / 255, gn = g / 255, bn = b / 255;
-  const max = Math.max(rn, gn, bn), min = Math.min(rn, gn, bn);
-  const d = max - min;
-  let h = 0;
-  if (d !== 0) {
-    switch (max) {
-      case rn: h = (gn - bn) / d + (gn < bn ? 6 : 0); break;
-      case gn: h = (bn - rn) / d + 2; break;
-      default: h = (rn - gn) / d + 4;
-    }
-    h /= 6;
-  }
-  const s = max === 0 ? 0 : d / max;
-  const v = max;
-  return { h: Math.round(h * 360), s: Math.round(s * 100), v: Math.round(v * 100) };
-}
+import { useState, useEffect } from 'react'
+import './specialcolor.css'
 
 export default function SpecialColor() {
-  const { colorHex } = useParams();
-  const hex = colorHex ? (colorHex.startsWith("#") ? colorHex : `#${colorHex}`) : "#FFFFFF";
-  const rgb = hexToRgb(hex);
-  const cmyk = rgbToCmyk(rgb);
-  const hsl = rgbToHsl(rgb);
-  const hsv = rgbToHsv(rgb);
+  const [fullscreen, setFullscreen] = useState(false)
+
+  useEffect(() => {
+    const onEsc = (e) => {
+      if (e.key === 'Escape') setFullscreen(false)
+    }
+    document.addEventListener('keydown', onEsc)
+    return () => document.removeEventListener('keydown', onEsc)
+  }, [])
 
   return (
-    <div className="page special-color">
-      <h2>Color {hex.toUpperCase()}</h2>
-      <div className="special-top">
-        <div className="preview" style={{ background: hex }} />
+    <>
+      {/* FULLSCREEN PREVIEW */}
+      <div className={`fullscreen-preview ${fullscreen ? 'active' : ''}`}>
+        <button
+          className="fullscreen-close"
+          aria-label="Close"
+          onClick={() => setFullscreen(false)}
+        >
+          <svg viewBox="0 0 24 24" fill="none" strokeWidth="2">
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+        </button>
+        <span>301934</span>
+      </div>
+
+      <div className="container">
+        <div className="header-row">
+          <div>
+            <div className="breadcrumb">Colors &gt; Midnight Violet</div>
+            <h1>Midnight Violet</h1>
+            <div className="subtitle">
+              Intense violet-black depths fill any space with intrigue and
+              boldness, channeling mystery and hidden elegance.
+            </div>
+          </div>
+
+          <div className="envato-box">
+            <strong>Envato</strong>
+            Speed up your workflow with unlimited Graphic Assets.
+          </div>
+        </div>
+
+        {/* COLOR PREVIEW */}
+        <div className="color-preview">
+          <div className="preview-actions">
+            <button aria-label="Edit">
+              ✎
+            </button>
+
+            <button aria-label="Open" onClick={() => setFullscreen(true)}>
+              ⤢
+            </button>
+
+            <button className="save-btn" aria-label="Save">
+              ❤ <span>Save</span> ▼
+            </button>
+          </div>
+
+          <span>301934</span>
+        </div>
+
+        {/* CONVERSION */}
+        <h2>Conversion</h2>
         <div className="conversion">
           <table>
             <tbody>
-              <tr><td>HEX</td><td>{hex.toUpperCase()}</td></tr>
-              <tr><td>RGB</td><td>{`rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`}</td></tr>
-              <tr><td>CMYK</td><td>{`cmyk(${Math.round(cmyk.c*100)}%, ${Math.round(cmyk.m*100)}%, ${Math.round(cmyk.y*100)}%, ${Math.round(cmyk.k*100)}%)`}</td></tr>
-              <tr><td>HSB (HSV)</td><td>{`hsb(${hsv.h}°, ${hsv.s}%, ${hsv.v}%)`}</td></tr>
-              <tr><td>HSL</td><td>{`hsl(${hsl.h}°, ${hsl.s}%, ${hsl.l}%)`}</td></tr>
+              <tr><td>HEX</td><td>301934</td></tr>
+              <tr><td>RGB</td><td>48, 25, 52</td></tr>
+              <tr><td>CMYK</td><td>8, 52, 0, 80</td></tr>
+              <tr><td>HSB</td><td>291, 52, 20</td></tr>
+              <tr><td>HSL</td><td>291, 35, 15</td></tr>
+            </tbody>
+          </table>
+
+          <table>
+            <tbody>
+              <tr><td>LAB</td><td>13, 17, -13</td></tr>
+              <tr><td>XYZ</td><td>2, 2, 3</td></tr>
+              <tr><td>LCH</td><td>13, 21, 322</td></tr>
+              <tr><td>LUV</td><td>13, 8, -13</td></tr>
+              <tr><td>HWB</td><td>291, 10, 80</td></tr>
             </tbody>
           </table>
         </div>
+
+
+
+         <footer>
+    <div className="zoo">
+
+      <div className="cage">
+        <h4>Tools</h4>
+        <ul>
+          <li>Generate your palettes</li>
+          <li>Explore popular palettes</li>
+          <li>Extract palette from image</li>
+          <li>Contrast checker</li>
+          <li>Preview palettes on designs</li>
+          <li>Color picker</li>
+          <li>Tailwind Colors</li>
+          <li>Color Bot</li>
+        </ul>
       </div>
 
-      <section style={{ marginTop: 20 }}>
-        <h4>Details</h4>
-        <div>Author: Demo</div>
-      </section>
+      <div className="cage">
+        <h4>Discover</h4>
+        <ul>
+          <li>List of colors</li>
+          <li>Browse gradients</li>
+          <li>Create a gradient</li>
+          <li>Make a gradient palette</li>
+          <li>Image converter</li>
+          <li>Recolor your own design</li>
+          <li>Create a collage</li>
+          <li>Browse free fonts</li>
+          <li>Font Generator</li>
+        </ul>
+      </div>
+
+      <div className="cage">
+        <h4>Apps</h4>
+        <ul>
+          <li>iOS App</li>
+          <li>Figma Plugin</li>
+          <li>Adobe Extension</li>
+          <li>Chrome Extension</li>
+        </ul>
+      </div>
+
+      <div className="cage">
+        <h4>Company</h4>
+        <ul>
+          <li>Pricing</li>
+          <li>License</li>
+          <li>Terms of service</li>
+          <li>Privacy policy</li>
+          <li>Cookie policy</li>
+          <li>Manage cookies</li>
+          <li>Help center</li>
+          <li>Advertise</li>
+          <li>Affiliate</li>
+          <li>Contact</li>
+          <li>Feature Requests</li>
+        </ul>
+      </div>
+
     </div>
-  );
+  </footer>
+      </div>
+    </>
+  )
 }
