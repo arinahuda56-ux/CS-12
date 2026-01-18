@@ -19,23 +19,15 @@ export const HoverColorLetters = (props) => {
     return (<>
         <div className={classes.container}>
             {
-                text // => Hello world
-                    .split('') // => [H,e,l,l,o, ,w,o,r,l,d]
-                    // .map(letter => (<span>{letter}</span>))
+                text 
+                    .split('') 
                     .map((letter, index) => <HoverColorLetter
                         key={`${letter}-${index}`}
                         letter={letter}
                         getLetterColor={getLetterColor}
                         defaultColor={defaultColor}
                     />)
-                /* 
-                    <span>h</span>
-                    <span>e</span>
-                    <span>l</span>
-                    ....
-                    <span>l</span>
-                    <span>d</span>
-                */
+                
             }
         </div>
     </>)

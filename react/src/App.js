@@ -1,4 +1,4 @@
-// App.jsx — мінімальна зміна: автоперегенерація головної палітри та перехід у /generator
+
 import React, { useEffect, useState } from 'react'
 import './App.css'
 import { Routes, Route, Link } from 'react-router-dom'
@@ -8,7 +8,18 @@ import { Header } from './components/header/header.component'
 import Login from './pages/Login/login'
 import { Generator } from './pages/Generator/generator'
 import SpecialColor from './pages/specialColor/specialcolor'
-// import { Registration } from './pages/Registration/registration/'
+import Registration from './pages/Registration/registration'
+
+
+
+const getRandomColor = () => {
+  const letters = '0123456789ABCDEF'
+  let color = '#'
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)]
+  }
+  return color
+}
 
 
 
@@ -25,6 +36,30 @@ function App() {
     return () => clearInterval(id)
   }, [])
 
+
+
+
+
+const [dailyColor, setDailyColor] = useState('#000000')
+
+useEffect(() => {
+  const newColor = getRandomColor()
+  localStorage.setItem('dailyColor', newColor)
+  setDailyColor(newColor)
+}, [])
+
+
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setMainPalette(getRandomPalette(PALETTE_SIZE))
+    }, 2000)
+
+    return () => clearInterval(id)
+  }, [])
+
+  
+
   return (
     <div className="App">
       <Header />
@@ -33,6 +68,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/generator" element={<Generator />} />
         <Route path="/special-color" element={<SpecialColor />} />
+        <Route path="/registration" element={<Registration />} />
         {/* <Route path="/registration" element={<Registration />} /> */}
 
 
@@ -41,7 +77,6 @@ function App() {
           path="/"
           element={
             <>
-              {/* HERO */}
               <section className="hero">
                 <div className="heroText">
                   <h1>
@@ -104,7 +139,6 @@ function App() {
                 </Link>
               </section>
 
-              {/* ===== TRUSTED SECTION ===== */}
               <section className="trustedd">
                 <div className="trustedd-title">
                   TRUSTED BY 8+ MILLION CREATIVE MINDS AND TOP COMPANIES
@@ -130,23 +164,25 @@ function App() {
                    them in multiple formats—effortlessly across web, apps, and plugins. Now with AI!
                   </div>
 
-                  {/* <div className="color-cardd"> */}
-                  <Link to="/special-color" className="color-carddd">
-
-
+       
+                       <Link to="/special-color" className="color-carddd">
                     <small>COLOR OF THE DAY</small>
 
                     <div className="color-box">
                       <div className="color-left">
-                        <div className="color-sample"></div>
-                        <div className="color-hex">#301934</div>
+                        <div
+                          className="color-sample"
+                          style={{ backgroundColor: dailyColor }}
+                        ></div>
+
+                        <div className="color-hex">{dailyColor}</div>
                       </div>
 
                       <div className="color-innfo">
-                        <h3>Midnight Violet</h3>
+                        <h3>Daily Random Color</h3>
                         <p>
-                          Intense violet-black depths fill any space with
-                          intrigue and boldness.
+                          This color is generated automatically every time you
+                          reload the page.
                         </p>
                       </div>
                     </div>
@@ -159,7 +195,6 @@ function App() {
                 </div>
               </section>
 
-              {/* ===== GRID CARDS ===== */}
               <div className="grid">
                 {[
                   ['Palette Generator', 'START THE GENERATOR'],
@@ -181,7 +216,6 @@ function App() {
                 ))}
               </div>
 
-              {/* ===== FINAL SECTION ===== */}
               <section className="lion">
                 <HoverColorLetters
                       text="Make something colorful."
@@ -198,8 +232,6 @@ function App() {
                       ]}
                     />
               </section>
-
-              
 
 
                <footer>

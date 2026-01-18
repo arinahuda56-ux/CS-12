@@ -6,7 +6,6 @@ export const Header = () => {
   const [toolsOpen, setToolsOpen] = useState(false) 
   const toolsRef = useRef(null) 
  
-  // закриття по кліку поза dropdown 
   useEffect(() => { 
     const handleClickOutside = (e) => { 
       if (toolsRef.current && !toolsRef.current.contains(e.target)) { 
@@ -24,7 +23,6 @@ export const Header = () => {
  
       <nav className={classes.headerNav}> 
  
-        {/* TOOLS */} 
         <div 
           ref={toolsRef} 
           className={`${classes.tools} ${toolsOpen ? classes.active : ''}`} 
@@ -52,12 +50,10 @@ export const Header = () => {
           </div> 
         </div> 
  
-        <a href="#" className={classes.pro}>Go Pro</a> 
-        <a href="#" className={classes.signin}>Sign in</a>
- 
-        {/* внутрішній перехід через Link (без перезавантаження) */} 
-        {/* <Link to="/login" className={classes.signin}>Sign up</Link>  */}
-        <Link to="/login" className={classes.signupBtn}>Sign up</Link> 
+        <a href="#" className={classes.proooo}>Go Pro</a> 
+        <Link to="/login" className={classes.signin}>Sign in</Link>
+        <Link to="/registration" className={classes.signin}>Sign up</Link>
+        
       </nav> 
     </header> 
   ) 

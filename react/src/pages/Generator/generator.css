@@ -1,7 +1,4 @@
-/* Styles ported from provided CSS. Put this file at react/src/pages/Generator/generator.css */
 
-
-/* ===== TOP BAR ===== */
 .top-bar {
     height: 50px;
     border-bottom: 1px solid #eee;
@@ -12,21 +9,18 @@
     font-size: 14px;
     background: #fff;
 }
-
-/* ===== PALETTE ===== */
 .palette {
     display: flex;
     height: calc(100vh - 50px);
 }
 
-/* WRAPPER */
+
 .color-wrapper {
     flex: 1;
     position: relative;
     display: flex;
 }
 
-/* COLOR */
 .color {
     flex: 1;
     display: flex;
@@ -38,7 +32,7 @@
     width: 100%;
 }
 
-/* ACTIONS */
+
 .actions {
     display: flex;
     flex-direction: column;
@@ -63,22 +57,21 @@
 }
 .actionBtn svg { display: block; }
 
-/* hovered opacity improvement */
 .actionBtn:hover { opacity: 1; }
 
-/* TEXT */
-.hex {
+
+.hexen {
     font-size: 22px;
     font-weight: bold;
     margin-bottom: 6px;
 }
 
-.name {
+.pace {
     font-size: 12px;
     opacity: 0.9;
 }
 
-/* PLUS */
+
 .plus {
     position: absolute;
     right: -12px;
@@ -97,40 +90,24 @@
     z-index: 10;
 }
 
-/* show plus on hover of wrapper */
+
 .color-wrapper:hover .plus {
     opacity: 1;
 }
 
-/* plus sign styling */
+
 .plusSign {
     font-size: 16px;
     color: #333;
     line-height: 1;
 }
 
-/* TEXT COLORS */
 .light-text { color: #fff; }
 .dark-text { color: #000; }
 
-/* START COLORS (keep class names for compatibility if you still use them elsewhere) */
+
 .c1 { background: #00BFB2; }
 .c2 { background: #1A5E63; }
 .c3 { background: #028090; }
 .c4 { background: #F0F3BD; color: #000 !important; }
 .c5 { background: #C64191; }
-
-/* when heart is liked, indicate by different appearance */
-
-
-/* ensure palette scrolls on small screens */
-@media (max-width: 900px) {
-  .palette {
-    overflow-x: auto;
-    height: auto;
-    padding-bottom: 20px;
-  }
-  .color {
-    min-width: 220px;
-  }
-}

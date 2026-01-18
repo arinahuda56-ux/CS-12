@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react'
 import './specialcolor.css'
 
+
+
+
+
 export default function SpecialColor() {
   const [fullscreen, setFullscreen] = useState(false)
 
@@ -12,10 +16,23 @@ export default function SpecialColor() {
     return () => document.removeEventListener('keydown', onEsc)
   }, [])
 
+
+
+ const [color, setColor] = useState('#000')
+
+useEffect(() => {
+  const savedColor = localStorage.getItem('dailyColor')
+  if (savedColor) {
+    setColor(savedColor)
+  }
+}, [])
+
   return (
     <>
-      {/* FULLSCREEN PREVIEW */}
-      <div className={`fullscreen-preview ${fullscreen ? 'active' : ''}`}>
+      <div
+  className={`fullscreen-preview ${fullscreen ? 'active' : ''}`}
+  style={{ backgroundColor: color }}
+>
         <button
           className="fullscreen-close"
           aria-label="Close"
@@ -25,8 +42,8 @@ export default function SpecialColor() {
             <path d="M15 18l-6-6 6-6" />
           </svg>
         </button>
-        <span>301934</span>
-      </div>
+       <span>{color.replace('#', '')}</span>
+</div>
 
       <div className="container">
         <div className="header-row">
@@ -45,8 +62,11 @@ export default function SpecialColor() {
           </div>
         </div>
 
-        {/* COLOR PREVIEW */}
-        <div className="color-preview">
+      
+        <div
+  className="color-preview"
+  style={{ backgroundColor: color }}
+>
           <div className="preview-actions">
             <button aria-label="Edit">
               ✎
@@ -57,12 +77,12 @@ export default function SpecialColor() {
             </button>
 
             <button className="save-btn" aria-label="Save">
-              ❤ <span>Save</span> ▼
+              ❤️ <span>Save</span> ▼
             </button>
           </div>
 
-          <span>301934</span>
-        </div>
+           <span>{color.replace('#', '')}</span>
+</div>
 
         {/* CONVERSION */}
         <h2>Conversion</h2>
@@ -121,7 +141,6 @@ export default function SpecialColor() {
           <li>Font Generator</li>
         </ul>
       </div>
-
       <div className="cage">
         <h4>Apps</h4>
         <ul>

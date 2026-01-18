@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import './generator.css'
 
-// Константи
 const MAX_COLORS = 7
 
-// Початкові кольори (відповідають класам c1..c5 у CSS)
 const INITIAL_COLORS = [
   { hex: '#00BFB2', name: 'Teal Spring', liked: false },
   { hex: '#1A5E63', name: 'Deep Teal', liked: false },
@@ -13,7 +11,6 @@ const INITIAL_COLORS = [
   { hex: '#C64191', name: 'Fuchsia Plum', liked: false }
 ]
 
-// Генерує випадковий HEX (великими буквами)
 const randomHex = () =>
   '#' +
   Math.floor(Math.random() * 16777215)
@@ -24,11 +21,9 @@ const randomHex = () =>
 export const Generator = () => {
   const [colors, setColors] = useState(() => INITIAL_COLORS.map(c => ({ ...c })))
 
-  // Обробник натиснення пробілу: змінює всі не-лайкнуті кольори
   useEffect(() => {
     const onKey = (e) => {
       if (e.code === 'Space' || e.key === ' ') {
-        // виключаємо, якщо фокус у input/textarea
         const tag = (document.activeElement && document.activeElement.tagName) || ''
         if (tag === 'INPUT' || tag === 'TEXTAREA') return
 
@@ -43,7 +38,7 @@ export const Generator = () => {
     return () => window.removeEventListener('keydown', onKey)
   }, [])
 
-  // Видалити колір по індексу
+
   const handleDelete = (index) => {
     setColors(prev => {
       const next = prev.slice()
@@ -52,7 +47,7 @@ export const Generator = () => {
     })
   }
 
-  // Лайк/анлайк (у наданому скрипті це toggle)
+  
   const handleLikeToggle = (index) => {
     setColors(prev => {
       const next = prev.slice()
@@ -61,7 +56,7 @@ export const Generator = () => {
     })
   }
 
-  // Додати колір після заданого індексу
+  
   const addOneColor = (indexAfter) => {
     setColors(prev => {
       if (prev.length >= MAX_COLORS) return prev
@@ -82,7 +77,7 @@ export const Generator = () => {
         {colors.map((c, i) => (
           <div key={c.hex + i} className="color-wrapper" role="listitem">
             <div
-              className={`color ${/* в оригіналі використовували light-text; лишаємо light-text за замовчуванням */ 'light-text'}`}
+              className={`color ${'light-text'}`}
               style={{ background: c.hex }}
             >
               <div className="actions">
@@ -96,7 +91,6 @@ export const Generator = () => {
                   aria-label="delete"
                   title="Delete"
                 >
-                  {/* simple trash svg */}
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.6">
                     <polyline points="3 6 5 6 21 6" />
                     <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" />
@@ -115,7 +109,7 @@ export const Generator = () => {
                   aria-label="like"
                   title={c.liked ? 'Unlike' : 'Like'}
                 >
-                  {/* heart svg; filled when liked */}
+
                   {c.liked ? (
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="#000" stroke="#000" strokeWidth="0">
                       <path d="M12 21s-7-4.9-9.2-7.2C-0.6 9.9 3 5 7 6.6 9 7.6 12 10 12 10s3-2.4 5-3.4c4-1.6 7.6 3.3 4.2 7.8C19 16.1 12 21 12 21z" />
@@ -128,11 +122,10 @@ export const Generator = () => {
                 </button>
               </div>
 
-              <div className="hex">{c.hex.replace('#', '')}</div>
-              <div className="name">{c.name}</div>
+              <div className="hexen">{c.hex.replace('#', '')}</div>
+              <div className="pace">{c.name}</div>
             </div>
 
-            {/* Plus: показуємо, але ховаємо якщо досягнуто максимум */}
             {i < colors.length && (
               <div
                 className="plus"

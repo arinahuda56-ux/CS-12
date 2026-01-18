@@ -1,33 +1,47 @@
-/* Базовий CSS — адаптуйте під свій дизайн */
-.weird-root {
+.weird {
   display: flex;
-  min-height: 100vh;
-  font-family: sans-serif;
+  height: 100vh;
+}
+
+.weird * {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .weird-leftside {
-  flex: 1;
-  padding: 40px;
-  max-width: 520px;
+  width: 50%;
+  padding: 80px 90px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.weird-header {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .weird-header h1 {
-  margin: 0 0 8px 0;
-  font-size: 32px;
+  font-size: 40px;
+  margin-bottom: 10px;
 }
 
 .weird-subtitle {
-  margin: 0 0 24px 0;
   color: #666;
 }
 
-.weird-input {
-  display: block;
+.weird-form {
+  max-width: 360px;
+  margin: 0 auto;
   width: 100%;
-  padding: 10px 12px;
-  margin-bottom: 12px;
+}
+
+.weird-input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  border-radius: 8px;
   border: 1px solid #ddd;
-  border-radius: 6px;
   font-size: 14px;
 }
 
@@ -35,36 +49,79 @@
   position: relative;
 }
 
-.weird-input--with-toggle {
-  padding-right: 44px;
-}
-
 .weird-toggle {
   position: absolute;
-  right: 6px;
-  top: 6px;
-  background: transparent;
-  border: 0;
-  padding: 6px;
+  right: 14px;
+  top: 45%;
+  transform: translateY(-55%);
+  width: 24px;
+  height: 24px;
   cursor: pointer;
+  opacity: 0.6;
+}
+
+.weird-toggle:hover {
+  opacity: 1;
 }
 
 .weird-button {
   width: 100%;
-  padding: 12px;
-  margin-top: 8px;
-  background: #111;
-  color: #fff;
+  padding: 13px;
+  background: #2563eb;
+  color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
+  font-size: 15px;
   cursor: pointer;
+  margin-top: 10px;
+}
+
+.weird-button:hover {
+  background: #1d4ed8;
 }
 
 .weird-signin {
-  margin-top: 12px;
+  margin-top: 20px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.weird-signin a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.weird-terms {
+  position: absolute;
+  bottom: 20px;
+  left: 90px;
+  font-size: 12px;
+  color: #777;
 }
 
 .weird-rightside {
-  flex: 1;
-  background: linear-gradient(180deg,#f6f7fb,#e9eefb);
+  width: 50%;
+  background: linear-gradient(
+    135deg,
+    #ff4ecd,
+    #c77dff,
+    #7dd3fc,
+    #bef264
+  );
+}
+
+@media (max-width: 900px) {
+  .weird {
+    flex-direction: column;
+  }
+
+  .weird-leftside,
+  .weird-rightside {
+    width: 100%;
+  }
+
+  .weird-terms {
+    position: static;
+    margin-top: 40px;
+  }
 }
